@@ -34,7 +34,8 @@ export default{
       this.clavierStore.incrementClavier(number)
     },
     call(){
-      this.journalStore.appel({ call: this.displayName, date: new Date() })
+      const date = new Date().toISOString().slice(0, 16).replace('T', ' ');
+      this.journalStore.appel({ nom: this.Friendsname, date: date })
       this.clavierStore.resetClavier()
     }
   }

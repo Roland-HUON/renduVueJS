@@ -24,10 +24,12 @@ import { useAddContactStore } from '@/stores/addContact'
 <template>
   <div class="contact-global-content">
     <button @click="adds()">+</button>
-    <div class="contact-single" v-for="contact in contacts">
-      <h2>{{ contact.nom }}</h2>
-      <p>{{ contact.number }}</p>
-      <img src="../assets/appel-icon.png" alt="appel icon">
+    <div class="contact-part">
+      <div class="contact-single" v-for="contact in contacts">
+        <h2>{{ contact.nom }}</h2>
+        <p>{{ contact.number }}</p>
+        <img src="../assets/appel-icon.png" alt="appel icon">
+      </div>
     </div>
   </div>
 </template>
@@ -37,26 +39,20 @@ import { useAddContactStore } from '@/stores/addContact'
     position: relative;
     border: 3px solid rgb(245, 155, 20);
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
   .contact-single{
     display: flex;
-    flex-direction: column;
-  }
-  .name{
-    align-items: flex-start;
-  }
-  .number{
-    align-items: center;
-  }
-  .phone{
-    align-items: flex-end;
+    justify-content: space-between;
   }
   button{
-    position: absolute;
-    top: 50px;
-    right: 0;
+    width: 50px;
+    height: auto;
+    background-color: orange;
+    align-self: end;
+    font-size: 24px;
   }
   h2{
     text-align: left;
@@ -72,6 +68,6 @@ import { useAddContactStore } from '@/stores/addContact'
     letter-spacing: 1.04px;
   }
   img{
-    width: 10%;
+    width: 5%;
   }
 </style>
