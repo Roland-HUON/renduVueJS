@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
@@ -8,7 +7,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Journal</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
-        <RouterLink to="/appel">Appel</RouterLink>
+        <RouterLink to="/clavier">Clavier</RouterLink>
         <!-- <RouterLink to="/addContact">About</RouterLink> -->
       </nav>
   </header>
@@ -16,25 +15,15 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
+  height: 100%;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  background-color: rgb(245, 155, 20);
 }
 
 nav a.router-link-exact-active:hover {
@@ -42,39 +31,15 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  border: 3px solid rgb(245, 155, 20);
+  font-size: 50px;
+  text-decoration: none;
+  color: black;
 }
 
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
