@@ -1,6 +1,18 @@
 <script>
+import { useAddContactStore } from '@/stores/addContact'
   export default{
     name: 'ContactView',
+    setup(){
+        const personneStore = useAddContactStore()
+        return{
+          personneStore,
+        }
+    },
+    computed:{
+        contacts(){
+            return this.personneStore.personnes
+        }
+    },
     methods:{
         adds(){
             window.location.href = "/addContact"
@@ -12,19 +24,9 @@
 <template>
   <div class="contact-global-content">
     <button @click="adds()">+</button>
-    <div class="contact-single name">
-      <h2>Gérard</h2>
-      <h2>Silvie</h2>
-      <h2>Estéban</h2>
-    </div>
-    <div class="contact-single number">
-      <p>08 08 08 08 08</p>
-      <p>07 07 07 07 07</p>
-      <p>06 06 06 06 06</p>
-    </div>
-    <div class="contact-single phone">
-      <img src="../assets/appel-icon.png" alt="appel icon">
-      <img src="../assets/appel-icon.png" alt="appel icon">
+    <div class="contact-single" v-for="contact in contacts">
+      <h2>{{ contact.nom }}</h2>
+      <p>{{ contact.number }}</p>
       <img src="../assets/appel-icon.png" alt="appel icon">
     </div>
   </div>
