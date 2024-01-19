@@ -6,11 +6,12 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <header>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Journal</RouterLink>
+        <RouterLink to="/contact">Contact</RouterLink>
+        <RouterLink to="/appel">Appel</RouterLink>
+        <!-- <RouterLink to="/addContact">About</RouterLink> -->
       </nav>
   </header>
-
   <RouterView />
 </template>
 
