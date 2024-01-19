@@ -11,8 +11,8 @@ import { useAddContactStore } from '@/stores/addContact'
     data(){
       return{
         perso : {
-          pseudo :'',
-          age: ''
+          nom :'',
+          number: ''
         },
       }
     },

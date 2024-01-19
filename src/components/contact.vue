@@ -1,7 +1,7 @@
 <script>
 import { useAddContactStore } from '@/stores/addContact'
 export default{
-    name: 'CartePerso',
+    name: 'contact',
     setup(){
         const personneStore = useAddContactStore()
         return{
