@@ -45,11 +45,11 @@ export default{
   <div class="clavier-global-conteneur">
     <div class="clavier-first-content">
       <div class="number-input">
-        <p>{{ number }}</p>
+        <p class="number">{{ number }}</p>
         <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
       </div>
       <div class="name-contact-find">
-        <p>{{ Friendsname }}</p>
+        <p class="name">{{ Friendsname }}</p>
       </div>
     </div>
     <div class="clavier-second-content">
@@ -103,6 +103,41 @@ export default{
 </template>
 
 <style scoped>
+  .clavier-global-conteneur{
+    border: 3px solid rgb(245, 155, 20);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+  }
+  .clavier-first-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  p{
+    text-align: center;
+    font-size: 18px;
+  }
+  .number-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .name-contact-find{
+    width: 70%;
+    height: 30px;
+    border-bottom: 3px solid orangered;
+  }
+  .number{
+    width: 70%;
+    height: 30px;
+    border: 3px solid orangered;
+  }
+  .error-message{
+    color: red;
+  }
   .clavier-second-content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -110,6 +145,7 @@ export default{
     justify-items: center;
   }
   .number-inputed{
+    cursor: pointer;
     width: 50%;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
